@@ -1,0 +1,506 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    background-color:#252525;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    cursor:default;
+}
+
+@media (max-width:640px){
+  #pnding {
+    margin-left: 12%;
+  }
+  #task_form {
+    left: 15%;
+  }
+  #title {
+    left: 35%;
+  }
+}
+
+@media (min-width:641px){
+  #pnding {
+    margin-left: 22%;
+  }
+  #task_form {
+    left: 35%;
+  }
+  #title {
+    left: 43%;
+  }
+}
+
+
+/*   Header   */
+#header{
+  position:sticky;
+  top:0px; 
+  background-color:#252525;
+  z-index:1;
+}
+
+/*   Clear all button   */
+#clr_all{
+  border-style:none;
+  border-radius:5px;
+  background-color:red;
+  color:#ffffff;
+  padding:5px;
+  font-weight:bold;
+  font-size:15px;
+  text-align:center;
+  position: absolute;
+  top:10px;
+  left:15px; 
+  cursor:pointer;
+}
+#clr_all:active{
+  background-color:#ffffff;
+  color:red;
+}
+
+/*   Header title   */
+#title{
+    position:absolute;
+    top:5px;
+    font-weight:bold;
+    font-size:35px;
+    color:#ffffff;
+}
+
+/*   Tabs div   */   
+#tabs{
+    display:flex;
+    list-style:none;
+    padding-top:100px;
+}
+
+/*   Tabs in list   */
+.tab{
+    margin:0 10%;
+    text-decoration:none;
+    color:#ffffff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/*   Horizontal line in header   */
+#hr{
+    margin-top:10px;    
+}
+
+/*   Primary key of task elems   */ 
+.hd_key{
+  display:none;
+}
+
+/*   Pending tasks div   */
+.task_pnd{
+    width: 98%;
+    height: 110px;
+    background-color:#111111;
+    color:white;
+    margin:10px  0;
+    position:relative;
+    top:0;
+    border-left:10px solid blue;
+    border-radius:0 20px 20px 0;
+    animation-name:tsk;
+    animation-duration: 0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes tsk{
+    0%{
+      width:0%;
+      height:0px;
+    }
+    15%{
+      width:0%;
+      height:110px
+    }
+    100%{
+      width: 98%%:
+    }
+}
+
+/*   Given task of task elems   */
+.task_txt{
+    font-weight:bold;
+    font-size:19px;
+    position:relative;
+    left:15px;
+    top:22px;
+    width:95%;
+    animation-name:tsk_t;
+    animation-duration:0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes tsk_t{
+  0%{
+    font-size:0px;
+  }
+  100%{
+    font-size:19px;
+  }
+}
+
+/*  Formation date of task elems  */
+.task_date{
+    font-size:15px;
+    font-weight:bold;
+    color:#555555;
+    position:absolute;
+    top:5px;
+    right:100px;
+    width:0px;
+}
+
+/*   "Due" text of task elems   */
+.due{ 
+    position:absolute;
+    bottom:5px;
+    left:15px;
+    font-size:15px;
+    font-weight:bold;  
+}
+
+/*  Given due date of task elems  */
+.task_due_date{
+    position:absolute;
+    bottom:5px;
+    left:50px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/*   "Done" button of task elems  */
+.task_dn{
+    position:absolute;
+    top:85px;
+    right: 20px;
+    font-size:17px;
+    font-weight:bold;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+/*   Missing tasks div   */
+.task_msng{
+    width:98%;
+    height:110px;
+    background-color:#111111;
+    color:white;
+    margin:10px  0;
+    position:relative;
+    top:0;
+    border-left:10px solid red;
+    border-radius:0 20px 20px 0;
+    animation-name:tsk;
+    animation-duration:0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards
+}
+
+/*   Completed tasks div   */
+.task_dne{
+    width:98%;
+    height:110px;
+    background-color:#111111;
+    color:white;
+    margin:10px  0;
+    position:relative;
+    top:0;
+    border-left:10px solid lime;
+    border-radius:0 20px 20px 0;
+    animation-name:tsk;
+    animation-duration:0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards
+}
+
+/*   Late completed tasks div   */
+.task_dne_late{
+    width:98%;
+    height:110px;
+    background-color:#111111;
+    color:white;
+    margin:10px  0;
+    position:relative;
+    top:0;
+    border-left:10px solid lime;
+    border-radius:0 20px 20px 0;
+    animation-name:tsk;
+    animation-duration:0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards
+}
+
+/* "Completd" text of completed tasks */
+.task_done{
+    font-weight:bold;
+    font-size:17px;
+    position:absolute;
+    top:85px;
+    right: 20px;
+    color:lime;
+}
+
+/* "Completed late" text of late completed tasks */
+.task_done_late{
+    font-weight:bold;
+    font-size:17px;
+    position:absolute;
+    top:85px;
+    right: 20px;
+    color:red;
+}
+
+/*    Add button at header   */
+#add{
+    height:50px;
+    width:50px;
+    background-color:lime;
+    position:sticky;
+    position:absolute;
+    right:20px;
+    bottom:60px;
+    border-radius:10px;
+    text-align:center;
+}
+#add:active{
+  background-color:#ffffff;
+  }
+
+/*  "+" text inside the button   */
+#pls{
+    font-size:50px;
+    color:#ffffff;
+    position:relative;
+    bottom:4px;
+    cursor:pointer;
+}
+#pls:active{
+  color:lime;
+}
+
+/*   Selectd tab in list   */
+.select{
+    animation-name:slct;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+    animation-duration:0.3s;   
+}
+@keyframes slct{
+    0%{
+        color:#ffffff;
+        text-decoration:none;
+    }
+    100%{
+        color:blue;
+        text-decoration:underline;
+    }
+}
+
+/*   Selected section   */
+.tab_select{
+    animation-name:tslct;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+    animation-duration:0.3s; 
+    display:block;
+}
+@keyframes tslct{
+    0%{
+        opacity:0%;
+    }
+    100%{
+        opacity:100%;
+    }
+}
+
+/*   Unselected section   */
+.tab_unselect{
+        display:none;
+}
+
+/*   Task details form   */
+#task_form{
+    z-index:2;
+    height:300px;
+    width:300px;
+    background-color:#555555;
+    position:absolute;
+    top:25%;
+    display:none;
+    border-radius:20px;
+}
+.apr_form{
+    animation-name:form;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+    animation-duration:0.4s;
+}
+@keyframes form{
+    0%{
+      top:-30%; 
+      box-shadow:0 0 0; 
+    }
+    100%{
+        top:25%;
+        box-shadow:0 0 30px black;
+    }
+}
+
+.dis_form{
+    animation-name: dis;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+    animation-duration:0.4s;
+}
+@keyframes dis{
+  0%{
+    top: 25%;
+    box-shadow: 0 0 30px black;
+  }
+  100%{
+    top: -40%;
+    box-shadow: 0 0 0;
+  }
+}
+
+/*   Task form heading   */
+#form_heading{
+    font-size:30px;
+    font-weight:bold;
+    color:#ffffff;
+    text-decoration:underline;
+    position:absolute;
+    top:5px;
+    left:100px;
+}
+
+/*   "Task:" text of task form   */
+#tsk_text{
+        position:absolute;
+        top:110px;
+        left:10px;
+        font-size:20px;
+        font-weight:bold;
+        color:#ffffff;        
+}
+
+/* "Limit 30 char."  of task form */
+#lmt{
+  font-size:15px;
+  font-weight: bold;
+  color:#ffffff; 
+  text-decoration:underline;
+  position:absolute;
+  top:110px;
+  right:10px;
+}
+
+/*   Task input of task form   */
+#enter_tsk{
+    width:280px;
+    background-color:transparent;
+    border-style:none;
+    border-bottom:3px solid cyan;
+    color:#ffffff;
+    position:absolute;
+    top:80px;
+    left:10px;
+    font-size:18px;
+    color:#ffffff;
+    text-align:left;
+    font-weight:bold;
+}
+
+/*   "Due:" text of task form   */
+#due_text{
+    position:absolute;
+    top:210px;
+    left:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+/*   Due date input of task form  */
+#enter_due{
+    background-color:transparent;
+    border-style:none;
+    border-bottom:3px solid cyan;
+    color:#ffffff;
+    position:absolute;
+    top:180px;
+    left:10px;
+    font-size:18px;
+    color:#ffffff;
+    text-align:left;
+    font-weight:bold;
+}
+
+/*   Cancel button of task form   */
+#cnl_btn{
+    position:absolute;
+    bottom:15px;
+    left:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:red;
+    text-decoration:underline;
+    background-color:transparent;
+    border-style:none;
+    cursor:pointer;
+}
+
+/*   Add button of task form   */
+#add_btn{
+    position:absolute;
+    bottom:15px;
+    right:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:lime;
+    text-decoration:underline;
+    background-color:transparent;
+    border-style:none;
+    cursor: pointer;
+}
+
+/*   Remove task element animation   */
+.remove_task{
+  display:flex;
+   animation-name:rmv_tsk;
+    animation-duration:0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes rmv_tsk{
+    0%{
+      width: 95%;
+      height: 110px;
+    }
+    75%{
+      width: 0%;
+      height: 110px;
+    }
+    100%{
+      width: 0%;
+      height: 0px;
+    }
+}

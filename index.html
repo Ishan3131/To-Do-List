@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>To do list</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<!--    Hearder     -->
+<div id="header">
+
+<!--   Clear all    -->
+<button id="clr_all" onclick="cler()">Clear all</button>
+
+<!--    Title       -->
+<h id="title">To do list</h>
+
+<!--    Add_btn      -->
+<div id="add">
+<h id="pls">+</h>
+</div>
+
+<!--    Tabs        -->
+<ul id="tabs">
+
+<li class="tab select" id="pnding">Pending</li>
+  
+<li class="tab" id="msing">Missing</li>
+  
+<li class="tab" id="dn">Done</li>
+
+</ul> 
+  
+<hr id="hr" /> 
+  
+</div>
+
+  
+     <div id="page">
+
+<!--    Pending_Section     -->
+<section class="tab_select" id="Pending">  
+</section>
+
+<!--    Missing_Section     -->
+<section class="tab_unselect" id="Missing">
+</section>
+
+<!--    Done-Section        -->
+<section class="tab_unselect" id="Done">
+</section>
+</div> 
+
+<!--     Task_form      -->
+    <div id="task_form">
+
+<!--     Heading       -->
+    <h id="form_heading">Details</h>
+  
+<!--     Task input    --> 
+    <h id="tsk_text">Task:</h>
+<input id="enter_tsk" type="text" />
+    <p id="lmt">Limit: 60 char.</p>
+
+<!--    Due date input   -->    
+    <h id="due_text">Due:</h>
+<input id="enter_due" type="date" />
+
+<!--    Cancel button   -->
+<button id="cnl_btn">Cancel</button>
+
+<!--    Add button     -->
+<button id="add_btn">Add</button>
+      
+    </div>
+
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
